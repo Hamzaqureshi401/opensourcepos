@@ -776,6 +776,32 @@ function get_cashups_manage_table_headers()
 }
 
 /*
+Get the header for the cash receivings tabular view
+*/
+function get_cash_receivings_manage_table_headers()
+{
+	$CI =& get_instance();
+
+	$headers = array(
+		array('cashup_id' => $CI->lang->line('cash_receiving_id')),
+		array('open_date' => $CI->lang->line('cash_receiving_opened_date')),
+		array('open_employee_id' => $CI->lang->line('cash_receiving_open_employee')),
+		array('open_amount_cash' => $CI->lang->line('cash_receiving_open_amount_cash')),
+		array('transfer_amount_cash' => $CI->lang->line('cash_receiving_transfer_amount_cash')),
+		// array('close_date' => $CI->lang->line('cash_receiving_closed_date')),
+		// array('close_employee_id' => $CI->lang->line('cash_receiving_close_employee')),
+		array('closed_amount_cash' => $CI->lang->line('cash_receiving_closed_amount_cash')),
+		array('note' => $CI->lang->line('cash_receiving_note')),
+		array('closed_amount_due' => $CI->lang->line('cash_receiving_closed_amount_due')),
+		array('closed_amount_card' => $CI->lang->line('cash_receiving_closed_amount_card')),
+		array('closed_amount_check' => $CI->lang->line('cash_receiving_closed_amount_check')),
+		array('closed_amount_total' => $CI->lang->line('cash_receiving_closed_amount_total'))
+	);
+
+	return transform_headers($headers);
+}
+
+/*
 Gets the html data row for the cashups
 */
 function get_cash_up_data_row($cash_up)
